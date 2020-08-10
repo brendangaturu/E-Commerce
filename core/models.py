@@ -13,6 +13,7 @@ LABEL_CHOICES = (
     ('', 'danger')
 )
 
+
 class Item(models.Model):
     title = models.CharField(max_length=100)
     price = models.FloatField()
@@ -36,10 +37,15 @@ class Order(models.Model):
     start_date = models.DateTimeField(auto_now=True)
     ordered_date = models.DateTimeField()
     ordered = models.BooleanField(default=False)
-    
 
     def __str__(self):
         return self.title
+
+
+#TODO: add cart model
+
+
+class Cart(models.Model):
 
 
 
